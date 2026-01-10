@@ -1,0 +1,31 @@
+body {
+  height: 100vh;
+  background: linear-gradient(155deg, #1CB5E0 0%, #000851 100%);
+  color: whitesmoke;
+  font-family: sans-serif;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 4rem;
+  font-family: serif;
+  margin-bottom: 6rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 5rem;
+  max-width: 40rem;
+}
