@@ -15,9 +15,9 @@ app.get("/", (req, res) => {
   res.render("index.ejs")
 });
 
-app.post("/", async (req, res) => {
+app.get("/joke", async (req, res) => {
   try {
-    const response = await axios.get(`https://v2.jokeapi.dev/joke/Programming?type=${req.body.type}`);
+    const response = await axios.get(`https://v2.jokeapi.dev/joke/Programming?type=${req.params.type}`);
     res.render("index.ejs", {joke: response.data})
     
   } catch (error) {

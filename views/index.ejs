@@ -8,26 +8,28 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="center">
-  <h1>Programming Jokes</h1>
-
-  <form action="/" method="post" class="center">
-    <h2>Select the type of joke 👇</h2>
-    <div>
-      <button type="submit" name="type" value="single" class="btn btn-outline-light btn-lg me-2">Single</button>
-      <button type="submit" name="type" value="twopart" class="btn btn-outline-light btn-lg">Two-part</button>
-    </div>
-  </form>
-
-  <% if (locals.joke) { %>
-    <% if (joke.type === "single") { %>
-      <p><%= joke.joke %></p>
-    <% } else { %>
-      <p><%= joke.setup %><br/><br/><%= joke.delivery %></p>
+  <main class="center">
+    <h1>Programming Jokes</h1>
+  
+    <form action="/joke" method="get" class="center">
+      <h2>Select the type of joke 👇</h2>
+      <div>
+        <button type="submit" name="type" value="single" class="btn btn-primary btn-lg me-3">Single</button>
+        <button type="submit" name="type" value="twopart" class="btn btn-primary btn-lg">Two-part</button>
+      </div>
+    </form>
+  
+    <% if (locals.joke) { %>
+      <% if (joke.type === "single") { %>
+        <p><%= joke.joke %></p>
+      <% } else { %>
+        <p><%= joke.setup %><br/><br/><%= joke.delivery %></p>
+      <% } %>
     <% } %>
-  <% } %>
-
-  <% if (locals.error) { %>
-    <p><%= error %></p>
-  <% } %>
+  
+    <% if (locals.error) { %>
+      <p><%= error %></p>
+    <% } %>
+  </main>
 </body>
 </html>
